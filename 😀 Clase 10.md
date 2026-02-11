@@ -1,91 +1,190 @@
-# Estructura Según
-**`Segun`** se usa para **elegir una acción entre varias opciones posibles**, a partir del **valor de una variable o expresión**.
+# 🛠️ Instalación del entorno
+✅ **Entorno listo**.
 
-Es equivalente a decir:
-
-> “**Según** el valor de esta variable, hacé tal cosa…”
-
-Se utiliza cuando hay **muchas alternativas** y todas dependen del **mismo dato**.
+# 🧑‍🔧 Introducción a C++
+- [Historia y evolución de los Lenguajes de Programación](https://www.youtube.com/watch?v=TrzZ7YQyXbs&t=284s)
+- [Historia de los lenguajes de programación - Corto](https://www.youtube.com/watch?v=MtuqC0L2_S0)
 
 
-# 🧠 ¿Qué son las funciones?
+## 1️⃣ ¿Qué es C++? (conceptual, breve)
 
-## 🧐 Lo que piensa Bauti que es
-- Tiene un rol específico
-- Realiza una tarea determinada
-- Es como un mini script: Tiene **entrada, proceso y salida**
+De la cartilla (pág. 2):
 
+- **C++ es un lenguaje de programación**    
+- Surge como extensión del lenguaje C
+- Es un **lenguaje estándar de la industria**
+- Se usa en:
+    - sistemas operativos
+    - videojuegos
+    - software de alto rendimiento
 
-## 🫡 Lo que realmente es
-- Una función en programación es un *bloque de código reutilizable*.
-- Diseñado para realizar una tarea específica
-- Se ejecuta al ser llamado desde otra parte del programa.
-- Permite organizar, estructurar y simplificar el código al evitar la repetición de instrucciones, facilitando el mantenimiento y la lectura de algoritmos complejos.
+> _“PSeInt te enseñó a pensar. C++ te enseña a hablarle a la computadora de verdad.”_
 
-
-```arm
-LOOP:
-	SUB X10, X10, X1 // X10 TIENE 10 al inicio y X1 TIENE 1
-	CBZ X10, Funcion_1 // X10 == 0 ?
-	B LOOP
 ---
----
----
----
---
----
---
 
-Funcion_1:
-	ADD X10, X1, X1
-	ADD X10, X1, X1
-	B LOOP
+## 2️⃣ ¿Qué necesitamos para programar en C++?
+
+- Una PC    
+- Un **compilador de C++**
+- Un **entorno de desarrollo (IDE)**
+
+### IDE que se usan en la escuela:
+
+- **Dev-C++**.
+- **Code::Blocks**.
+> “Vamos a usar Embarcadero Dev-C++ porque es simple y suficiente para empezar”.
+
+---
+
+## 3️⃣ Conceptos fundamentales (muy importantes)
+
+
+### 🔹 Instrucción
+
+👉 Una orden que le damos a la computadora.
+
+Ejemplo:
+`ADD X1, X1, X1`
+`cout << "Hola";`
+
+---
+
+### 🔹 Programa
+
+👉 Un **conjunto de instrucciones** que se ejecutan en orden.
+
+---
+
+### 🔹 Código fuente
+
+👉 El archivo que escribimos (`.cpp`).
+
+---
+
+### 🔹 Compilador
+
+👉 Programa que:
+
+- lee el código fuente
+- lo traduce a **código máquina**
+- genera un archivo ejecutable (`.exe`)
+
+> _“La computadora no entiende C++, entiende código máquina.  
+> El compilador hace de traductor.”_
+
+---
+
+## 4️⃣ Primer contacto con la estructura de un programa
+
+```c++
+
+#include <iostream>
+using namespace std;
+int main() {
+     cout << "Hola, estoy programando en C++";
+     return 0;
+ }
 ```
 
-```c
-//Devuelve el doble del número ingresado
-SubProceso doble <- elDobleDeUnNumero (x)
-	Definir doble Como Entero;
-	doble <- 2*x;
-FinSubProceso
+### Explicación mínima (no técnica):
 
-//Devuelve el triple de un número ingresado
-SubProceso triple <- elTripleDeUnNumero (x)
-	Definir triple Como Entero;
-	triple <- 3*x;
-FinSubProceso
+- `#include <iostream>`  
+    → permite usar entrada y salida
+    
+- `using namespace std;`  
+    → simplifica la escritura
+    
+- `int main()`  
+    → donde empieza el programa
+    
+- `{ }`  
+    → cuerpo del programa
+    
+- `cout`  
+    → mostrar en pantalla
 
+---
 
-Proceso Principal
-	Definir  num1, iterador Como Entero;
-	
-	//Funcion 
-	Para iterador<- 1 Hasta 10 Con Paso 1 Hacer
-		//Utilizamos la función
-		num1 <- elDobleDeUnNumero(iterador);
-		Escribir "* 2 x ", iterador, " = ", num1;
-	FinPara
-	
-	Escribir "---------------------------";
-	Para iterador<- 1 Hasta 10 Con Paso 1 Hacer
-		//Utilizamos la función
-		num1 <- elTripleDeUnNumero(iterador);
-		Escribir "* 3 x ", iterador, " = ", num1;
-	FinPara
-FinProceso
+## 5️⃣ Punto y coma (CLAVE EN CLASE 1)
 
+📌 **Casi todas las instrucciones terminan en `;`**
+
+Ejemplo de error típico:
+
+`cout << "Hola mundo"`
+
+> _“Si falta el punto y coma, el compilador no entiende dónde termina la instrucción.”_
+
+Esto justifica **errores de compilación** sin frustración.
+
+---
+
+## 6️⃣ Comentarios en C++
+
+`// Esto es un comentario`
+👉 Decir:
+- No se ejecuta
+- Sirve para explicar el código
+
+---
+
+## 7️⃣ Primer ejercicio de la clase
+
+🎯 Objetivo: **ver que el programa funciona**
+
+### Consigna
+
+> Escribir un programa que muestre dos mensajes en pantalla.
+
+Ejemplo:
+
+```c++
+#include <iostream>
+using namespace std;
+int main() {
+     cout << "Hola!";     
+     cout << "Este es mi primer programa en C++";     
+     return 0;
+}
 ```
+---
 
+## 8️⃣ Cierre conceptual 
 
-#  💻 Programación I
-Te dejo acá la presentación que vimos hoy
-[Hacer click para ingresar a la presentación de C++](https://www.canva.com/design/DAHAydm1HQY/yRf7UyOAgITEE6FuQFTcYw/edit?utm_content=DAHAydm1HQY&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+- Un programa:
+    - se escribe
+    - se compila
+    - se ejecuta
+- Si no compila → hay error de escritura
+- C++ es **estricto**, pero lógico
 
+> _“Hoy no aprendimos todo C++, pero ya somos programadores en C++.”_
 
-## ¿Por qué primero se compila antes de ejecutar?
-Porque **C++ es un lenguaje compilado**.
+# Página para ver sintaxis de C++
+[w3schools - Click aquí](https://www.w3schools.com/cpp/default.asp)
 
-Eso significa que el código que vos escribís (**código fuente**) **no puede ejecutarse directamente** por la computadora.  
-Primero debe **traducirse** a un lenguaje que la máquina sí entiende: **código máquina**.
+# 🧐 Curiosidades de la programación en C++
+- Como los lenguajes de programación como lo es C++, son viejos, dado que fueron implementados en el 1970 aprox. Estos lenguajes están en inglés.
+- Por lo tanto no podemos usar convenciones en español.
+- Por ejemplo: La , que nosotros usamos para los **decimales** para ellos es para indicar los MILES. Y los **.** para ellos son los decimales.
+- Ahora en programación en C++ y de ahora en adelante no se indican . ni , para señalar las unidades
 
-Ese proceso se llama **compilación**.
+# 🛠️Ejercicios
+
+## 🟢 Nivel 1 – Básicos
+
+### Número positivo o negativo
+
+Pedí un número entero e indicá mostrando por pantalla si es:
+- Positivo
+- Negativo
+- Cero
+
+### Descuento en compra
+
+Pedí el monto de una compra.
+
+- Si es mayor a 10000 → aplicar 10% de descuento
+- Si no → no hay descuento
+
+Mostrá el precio final.
